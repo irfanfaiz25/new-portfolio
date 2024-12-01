@@ -28,6 +28,22 @@ export default {
           "0%": { transform: "translateY(100%)" },
           "100%": { transform: "translateY(0)" },
         },
+        lineSlide: {
+          "0%": { transform: "scaleX(0)", opacity: "0" },
+          "100%": { transform: "scaleX(1)", opacity: "1" },
+        },
+        lineGrow: {
+          "0%": { width: "0%" },
+          "100%": { width: "30%" },
+        },
+        lineFadeSlide: {
+          "0%": { transform: "translateX(-20px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        lineExpand: {
+          "0%": { transform: "scaleX(0.5) scaleY(0.5)", opacity: "0" },
+          "100%": { transform: "scaleX(1) scaleY(1)", opacity: "1" },
+        },
       },
       animation: {
         "modal-fade": "fadeIn 0.3s ease-in-out",

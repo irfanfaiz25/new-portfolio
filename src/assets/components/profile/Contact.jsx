@@ -54,7 +54,7 @@ const Contact = () => {
             <p className="text-xs text-main-text">{contact.name}</p>
             <Link
               to={contact.link}
-              className="text-xs font-semibold text-main-text hover:text-secondary-text hover:underline"
+              className="text-xs font-semibold text-main-text hover:text-secondary-text hover:underline transition-all duration-300"
             >
               {contact.content}
             </Link>

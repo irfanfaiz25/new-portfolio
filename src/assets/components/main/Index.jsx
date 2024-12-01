@@ -1,11 +1,18 @@
-const Index = () => {
+import PropTypes from "prop-types";
+
+import NavbarHeader from "./NavbarHeader";
+
+const Index = ({ children }) => {
   return (
-    <div className="flex h-screen w-full bg-[#38383a] border-4 border-[#474749] rounded-xl p-5">
-      <div className="flex justify-between">
-        <h1 className="text-main-text text-3xl font-bold">About Me</h1>
-      </div>
+    <div className="h-screen w-full bg-main-bg border-4 border-main-border rounded-xl">
+      <NavbarHeader />
+
+      <div className="p-5 text-main-text">{children}</div>
     </div>
   );
+};
+Index.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default Index;

@@ -9,7 +9,7 @@ import Blog from "./assets/components/main/Blog";
 function App() {
   return (
     <>
-      <section className="block md:flex justify-between px-12 py-10 space-x-4">
+      <section className="block md:flex justify-between px-5 py-5 lg:px-12 lg:py-10 space-x-0 md:space-x-4 space-y-2 md:space-y-0">
         <ProfileSection />
 
         <Routes>

@@ -9,6 +9,7 @@ export default {
       },
       fontSize: {
         "5xl": "2.8rem",
+        "6xl": "3.2rem",
       },
       lineHeight: {
         12: "3rem",
@@ -61,6 +62,10 @@ export default {
         drawBackward: {
           "0%": { "stroke-dasharray": "0 1000", "stroke-dashoffset": "-1000" },
           "100%": { "stroke-dasharray": "1000 1000", "stroke-dashoffset": "0" },
+        },
+        highlight: {
+          "0%": { width: "0%", opacity: "0" },
+          "100%": { width: "11rem", opacity: "0.8" },
         },
       },
       animation: {

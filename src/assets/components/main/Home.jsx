@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <Index>
       <div className="justify-center animate-[fadeIn_0.5s_ease-in-out]">
-        <div className="text-left space-y-5 text-2xl md:text-5xl font-bold text-main-text font-serif leading-12">
+        <div className="text-left space-y-5 text-2xl md:text-4xl lg:text-5xl font-bold text-main-text font-serif leading-9 md:leading-10 lg:leading-12">
           <h1>
             a passionate software developer striving to{" "}
             <span className="relative inline-block">
@@ -47,7 +47,7 @@ const Home = () => {
             everyday.
           </h1>
         </div>
-        <div className="mt-6 text-left text-lg font-light text-main-text">
+        <div className="mt-6 text-left text-sm md:text-lg font-light text-main-text">
           My personal hub for{" "}
           <span className="text-secondary-text font-semibold">creativity</span>,{" "}
           <span className="text-tertiary-text font-semibold">exploration</span>,

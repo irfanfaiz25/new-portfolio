@@ -3,6 +3,7 @@ import { GithubIcon } from "../../svg/GithubIcon";
 import { LinkedinIcon } from "../../svg/LinkedinIcon";
 import { UpworkIcon } from "../../svg/UpworkIcon";
 import { InstagramIcon } from "../../svg/InstagramIcon";
+// import { ChainLink } from "../../svg/ChainLink";
 
 import { Link } from "react-router";
 
@@ -54,9 +55,10 @@ const Contact = () => {
             <p className="text-xs text-main-text">{contact.name}</p>
             <Link
               to={contact.link}
-              className="text-xs font-semibold text-main-text hover:text-secondary-text hover:underline transition-all duration-300"
+              className="flex space-x-1 items-center text-xs font-semibold text-main-text hover:text-secondary-text hover:underline transition-all duration-300"
             >
-              {contact.content}
+              <p>{contact.content}</p>
+              {/* <ChainLink width={9} height={9} color="#F3C623" /> */}
             </Link>
           </div>
         </div>

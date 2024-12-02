@@ -9,8 +9,8 @@ const ProfileSection = () => {
 
   return (
     <>
-      <div className="w-1/3 bg-main-bg border-4 border-main-border h-[650px] rounded-xl p-5">
-        <div className="flex justify-center items-center p-2 bg-secondary-bg w-36 h-36 rounded-3xl mx-auto mt-4">
+      <div className="w-1/3 bg-main-bg border-4 border-main-border h-fit rounded-xl p-7">
+        <div className="flex justify-center items-center p-2 bg-secondary-bg w-36 h-36 rounded-3xl mx-auto mt-2">
           <img
             src={Profile}
             alt="profile-image"
@@ -42,8 +42,6 @@ const ProfileSection = () => {
         <div className="border-t-2 border-main-border my-5"></div>
 
         <Contact />
-
-        <div className="flex justify-center items-center mt-9 space-x-1"></div>
       </div>
     </>
   );

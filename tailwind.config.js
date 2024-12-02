@@ -5,6 +5,13 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Karla", "sans-serif"],
+        serif: ["DM Serif Display", "serif"],
+      },
+      fontSize: {
+        "5xl": "2.8rem",
+      },
+      lineHeight: {
+        12: "3rem",
       },
       colors: {
         background: "#191919",
@@ -14,6 +21,9 @@ export default {
         "main-border": "#474749",
         "main-text": "#dcdce4",
         "secondary-text": "#f3c623",
+        "tertiary-text": "#f43f5e",
+        "main-stroke": "#f3c623",
+        "secondary-stroke": "#f43f5e",
       },
       keyframes: {
         fadeIn: {
@@ -34,7 +44,7 @@ export default {
         },
         lineGrow: {
           "0%": { width: "0%" },
-          "100%": { width: "30%" },
+          "100%": { width: "2.5rem" },
         },
         lineFadeSlide: {
           "0%": { transform: "translateX(-20px)", opacity: "0" },
@@ -43,6 +53,14 @@ export default {
         lineExpand: {
           "0%": { transform: "scaleX(0.5) scaleY(0.5)", opacity: "0" },
           "100%": { transform: "scaleX(1) scaleY(1)", opacity: "1" },
+        },
+        drawForward: {
+          "0%": { "stroke-dasharray": "0 1000", "stroke-dashoffset": "1000" },
+          "100%": { "stroke-dasharray": "1000 1000", "stroke-dashoffset": "0" },
+        },
+        drawBackward: {
+          "0%": { "stroke-dasharray": "0 1000", "stroke-dashoffset": "-1000" },
+          "100%": { "stroke-dasharray": "1000 1000", "stroke-dashoffset": "0" },
         },
       },
       animation: {

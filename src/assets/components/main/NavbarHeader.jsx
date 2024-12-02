@@ -23,7 +23,7 @@ const NavbarHeader = () => {
     <div className="flex w-full justify-between ps-5">
       <div>
         <h1
-          className="text-main-text text-3xl font-bold items-end pt-4 animate-[lineFadeSlide_0.3s_ease-in-out]
+          className="text-main-text text-2xl font-bold items-end pt-4 animate-[lineFadeSlide_0.3s_ease-in-out]
   transition-all duration-300"
         >
           {menus.find((menu) => menu.path === window.location.pathname)

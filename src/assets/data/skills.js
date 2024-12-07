@@ -34,6 +34,7 @@ export const SkillsData = {
     ],
   },
   "Frontend Development": {
+    notes: "Currently Exploring",
     skills: [
       {
         name: "Javascript",

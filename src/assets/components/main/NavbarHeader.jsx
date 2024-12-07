@@ -5,7 +5,7 @@ const NavbarHeader = () => {
   const menus = [
     {
       label: "Home",
-      path: "/home",
+      path: "/",
     },
     {
       label: "About Me",

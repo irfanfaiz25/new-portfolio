@@ -12,6 +12,10 @@ const NavbarHeader = () => {
       path: "/about-me",
     },
     {
+      label: "Experience",
+      path: "/experience",
+    },
+    {
       label: "Projects",
       path: "/projects",
     },

@@ -7,6 +7,7 @@ import GitLogo from "../svg/git-logo.svg";
 import PostmanLogo from "../svg/postman-logo.svg";
 import MysqlLogo from "../svg/mysql-logo.svg";
 import PostgresLogo from "../svg/postgres-logo.svg";
+import LivewireLogo from "../svg/livewire-logo.svg";
 
 export const SkillsData = {
   "Backend Development": {
@@ -39,11 +40,16 @@ export const SkillsData = {
       {
         name: "Javascript",
         logo: JSLogo,
+        borderColor: "border-t-tertiary-border",
       },
       {
         name: "ReactJS",
         logo: ReactLogo,
         borderColor: "border-t-tertiary-border",
+      },
+      {
+        name: "Laravel Livewire",
+        logo: LivewireLogo,
       },
       {
         name: "Tailwind",

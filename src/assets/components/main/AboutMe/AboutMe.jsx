@@ -1,8 +1,13 @@
 import Index from "../Index";
+import { useInView } from "react-intersection-observer";
 import { SkillsData } from "../../../data/skills";
 import SkillCard from "./SkillsCard";
 
 const AboutMe = () => {
+  const { ref: titleRef, inView: titleInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
   return (
     <Index>
       <div>
@@ -41,30 +46,39 @@ const AboutMe = () => {
         </p>
       </div>
 
-      <h1 className="mt-9 text-center text-3xl font-bold">Core Skills</h1>
+      <h1
+        ref={titleRef}
+        className={`mt-9 text-center text-3xl font-bold transition-opacity duration-1000 ease-in-out
+        ${titleInView ? "opacity-100" : "opacity-0"}`}
+      >
+        Core Skills
+      </h1>
 
       <div className="mt-8 flex flex-wrap justify-center md:justify-between gap-y-8">
-        {Object.entries(SkillsData).map(([category, { notes, skills }]) => (
-          <div key={category}>
-            <h3 className="text-lg font-bold">{category}</h3>
-            <div className="mt-3 block lg:flex gap-4 space-y-2 lg:space-y-0">
-              {skills.map((skill) => (
-                <SkillCard
-                  key={skill.name}
-                  name={skill.name}
-                  logo={skill.logo}
-                  borderColor={skill.borderColor && skill.borderColor}
-                />
-              ))}
-            </div>
-            {notes && (
-              <div className="mt-4 flex space-x-2 items-center">
-                <div className="bg-fourtiary-bg h-3 w-3 rounded-full shadow-sm shadow-black"></div>
-                <p className="text-sm font-semibold">Currently Exploring</p>
+        {Object.entries(SkillsData).map(
+          ([category, { notes, skills }], categoryIndex) => (
+            <div key={category}>
+              <h3 className="text-lg font-bold">{category}</h3>
+              <div className="mt-3 block lg:flex gap-4 space-y-2 lg:space-y-0">
+                {skills.map((skill, skillIndex) => (
+                  <SkillCard
+                    key={skill.name}
+                    name={skill.name}
+                    logo={skill.logo}
+                    borderColor={skill.borderColor && skill.borderColor}
+                    delay={categoryIndex * 200 + skillIndex * 100}
+                  />
+                ))}
               </div>
-            )}
-          </div>
-        ))}
+              {notes && (
+                <div className="mt-3 flex space-x-2 items-center">
+                  <div className="bg-fourtiary-bg h-2 w-2 rounded-full shadow-sm shadow-black"></div>
+                  <p className="text-sm font-semibold">Currently Exploring</p>
+                </div>
+              )}
+            </div>
+          )
+        )}
       </div>
     </Index>
   );

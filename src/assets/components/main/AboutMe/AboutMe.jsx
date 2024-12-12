@@ -2,59 +2,49 @@ import Index from "../Index";
 import { useInView } from "react-intersection-observer";
 import { SkillsData } from "../../../data/skills";
 import SkillCard from "./SkillsCard";
+import { EducationData } from "../../../data/education";
+import EducationList from "./EducationList";
+import { CertificationData } from "../../../data/certification";
+import CertificationList from "./CertificationList";
+import Description from "./Description";
+import { ImageModal } from "../ImageModal";
+import { useState } from "react";
 
 const AboutMe = () => {
   const { ref: titleRef, inView: titleInView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const { ref: educationRef, inView: educationInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
+
   return (
     <Index>
       <div>
-        <p className="font-bold text-xl relative">
-          <span className="relative z-10">{`"Hi, I'm Ahmad Irfan Faiz"`}</span>
-          <span className="absolute bottom-1 left-16 w-44 h-5 bg-rose-500/70 transform -rotate-1 -z-0 animate-[highlight_1s_ease-in-out]"></span>
-        </p>
-        <p className="mt-1">
-          {`I'm a full-stack web developer with a strong specialization in backend
-          development. I have a passion for building robust, scalable, and
-          efficient web applications that solve real-world problems. My
-          expertise lies in designing and implementing complex backend systems,
-          crafting seamless user experiences, and collaborating with
-          cross-functional teams to deliver impactful solutions.`}
-        </p>
-        <p className="mt-2">
-          {" "}
-          {`With hands-on
-          experience in technologies like Laravel and MySQL, and a growing proficiency in React, I
-          excel in creating end-to-end solutions—from database design and API
-          development to frontend integration. Whether working on team projects
-          or independently, I bring a meticulous and results-oriented approach
-          to every challenge.`}{" "}
-        </p>
-        <p className="mt-2">
-          {" "}
-          {`When I'm not coding, I enjoy exploring new tech
-          trends, contributing to open-source projects, and sharing my knowledge
-          with the developer community. I'm always on the lookout for
-          opportunities to grow, innovate, and contribute to meaningful
-          projects.`}
-        </p>
-        <p className="mt-3 text-xl font-bold">
-          {`Let's create something`}{" "}
-          <span className="text-secondary-text">incredible</span> together!
-        </p>
+        <Description />
       </div>
 
       <h1
         ref={titleRef}
-        className={`mt-9 text-center text-3xl font-bold transition-opacity duration-1000 ease-in-out
-        ${titleInView ? "opacity-100" : "opacity-0"}`}
+        className={`mt-10 mb-10 -ms-2 text-left text-3xl font-bold transition-opacity duration-1000 ease-in-out relative
+  ${titleInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
       >
-        Core Skills
+        <span className="text-main-text">Core Skills</span>
+        <div
+          className={`absolute -bottom-2 left-0 w-16 h-1 bg-tertiary-bg transition-transform duration-1000 ease-in-out ${
+            titleInView ? "scale-x-100" : "scale-x-0"
+          }`}
+          style={{ transformOrigin: "left" }}
+        ></div>
       </h1>
 
-      <div className="mt-8 flex flex-wrap justify-center md:justify-between gap-y-8">
+      <div className="mt-10 flex flex-wrap justify-center md:justify-between gap-y-8">
         {Object.entries(SkillsData).map(
           ([category, { notes, skills }], categoryIndex) => (
             <div key={category}>
@@ -79,6 +69,74 @@ const AboutMe = () => {
             </div>
           )
         )}
+      </div>
+
+      <div ref={educationRef} className="block lg:flex justify-between px-3">
+        <div>
+          <h1
+            className={`mt-10 mb-10 -ms-2 text-left text-3xl font-bold transition-opacity duration-1000 ease-in-out relative
+  ${educationInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+          >
+            <span className="text-secondary-text">Education Journey</span>
+            <div
+              className={`absolute -bottom-2 left-0 w-16 h-1 bg-tertiary-bg transition-transform duration-1000 ease-in-out ${
+                educationInView ? "scale-x-100" : "scale-x-0"
+              }`}
+              style={{ transformOrigin: "left" }}
+            ></div>
+          </h1>
+
+          <ol className="relative mt-3 border-s border-gray-200 dark:border-main-border">
+            {EducationData.map((item, index) => (
+              <EducationList
+                key={index}
+                institution={item.institution}
+                note={item.note ? item.note : ""}
+                major={item.major}
+                timeSpan={item.timeSpan}
+                delay={index * 200}
+              />
+            ))}
+          </ol>
+        </div>
+
+        <div>
+          <h1
+            className={`mt-10 mb-10 -ms-2 text-left text-3xl font-bold transition-opacity duration-1000 ease-in-out relative
+  ${educationInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+          >
+            <span className="text-main-text">Certification</span>
+            <div
+              className={`absolute -bottom-2 left-0 w-16 h-1 bg-tertiary-bg transition-transform duration-1000 ease-in-out ${
+                educationInView ? "scale-x-100" : "scale-x-0"
+              }`}
+              style={{ transformOrigin: "left" }}
+            ></div>
+          </h1>
+
+          <ol className="relative mt-3 border-s border-gray-200 dark:border-main-border">
+            {CertificationData.map((item, index) => (
+              <CertificationList
+                key={index}
+                name={item.name}
+                year={item.year}
+                image={item.image}
+                delay={index * 200}
+                selectedImage={(selectedImage) => {
+                  setSelectedImage(selectedImage);
+                  setIsModalOpen(true);
+                }}
+              />
+            ))}
+          </ol>
+        </div>
+
+        <ImageModal
+          isOpen={isModalOpen}
+          imageSrc={selectedImage}
+          alt="certification"
+          onClose={() => setIsModalOpen(false)}
+        />
       </div>
     </Index>
   );

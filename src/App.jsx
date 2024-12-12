@@ -5,7 +5,7 @@ import AboutMe from "./assets/components/main/AboutMe/AboutMe";
 import Home from "./assets/components/main/Home";
 import Projects from "./assets/components/main/Projects";
 import Blog from "./assets/components/main/Blog";
-import Experience from "./assets/components/main/Experience";
+import Experience from "./assets/components/main/Experience/Experience";
 
 function App() {
   return (

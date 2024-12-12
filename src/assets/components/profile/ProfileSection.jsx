@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ImageModal } from "./ImageModal";
+import { ImageModal } from "../main/ImageModal";
 
 import Profile from "../../img/profil.jpg";
 import Contact from "./Contact";

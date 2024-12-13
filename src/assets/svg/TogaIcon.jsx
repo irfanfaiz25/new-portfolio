@@ -8,10 +8,8 @@ export const TogaIcon = ({
 }) => {
   return (
     <svg
-      className={`h-4 w-4 ${lightColor} dark:${darkColor}`}
+      className={`h-${height} w-${width} ${lightColor} dark:${darkColor}`}
       fill="currentColor"
-      width={width}
-      height={height}
       version="1.1"
       id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"

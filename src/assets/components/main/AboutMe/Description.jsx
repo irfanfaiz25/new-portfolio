@@ -24,9 +24,9 @@ const Description = () => {
       </p>
       <p className="mt-2">
         {" "}
-        {`When I'm not coding, I enjoy exploring new tech
+        {`Beyond coding, I'm passionate about exploring emerging tech
           trends, contributing to open-source projects, and sharing my knowledge
-          with the developer community. I'm always on the lookout for
+          with the developer community. I'm always eager to embrace new
           opportunities to grow, innovate, and contribute to meaningful
           projects.`}
       </p>

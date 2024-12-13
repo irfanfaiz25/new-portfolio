@@ -23,8 +23,8 @@ const EducationList = ({
     >
       <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-gray-100 dark:bg-secondary-bg">
         <TogaIcon
-          height={15}
-          width={15}
+          height={4}
+          width={4}
           lightColor="text-white"
           darkColor="text-secondary-text"
         />

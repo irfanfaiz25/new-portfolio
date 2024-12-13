@@ -77,7 +77,7 @@ const AboutMe = () => {
             className={`mt-10 mb-10 -ms-2 text-left text-3xl font-bold transition-opacity duration-1000 ease-in-out relative
   ${educationInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
           >
-            <span className="text-secondary-text">Education Journey</span>
+            <span className="text-main-text">Education Journey</span>
             <div
               className={`absolute -bottom-2 left-0 w-16 h-1 bg-tertiary-bg transition-transform duration-1000 ease-in-out ${
                 educationInView ? "scale-x-100" : "scale-x-0"

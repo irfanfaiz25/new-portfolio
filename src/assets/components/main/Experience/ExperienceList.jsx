@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useInView } from "react-intersection-observer";
-import { BriefcaseIcon } from "../../../svg/BriefcaseIcon";
+import { FaBriefcase } from "react-icons/fa";
 
 const ExperienceList = ({
   companyName,
@@ -23,39 +23,37 @@ const ExperienceList = ({
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-gray-100 dark:bg-secondary-bg">
-        <BriefcaseIcon
-          height={3}
-          width={3}
-          lightColor="text-white"
-          darkColor="text-secondary-text"
+      <span className="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-secondary-bg dark:bg-dark-secondary-bg">
+        <FaBriefcase
+          size={12}
+          className="text-secondary-text dark:text-dark-secondary-text"
         />
       </span>
-      <h4 className="mb-0.5 text-lg font-semibold text-gray-900 dark:text-white">
+      <h4 className="mb-0.5 text-lg font-semibold text-main-text dark:text-dark-main-text">
         <span className="font-light">{position ? position + ", " : ""}</span>{" "}
         {companyName} <span className="text-gray-400">{note}</span>
       </h4>
       <p className="text-sm font-normal text-gray-500 dark:text-gray-400">
         {as}
       </p>
-      <p className="text-sm font-normal text-gray-500 dark:text-secondary-text">
+      <p className="text-sm font-normal text-secondary-text dark:text-dark-secondary-text">
         {timeSpan}
       </p>
-      <h4 className="mt-2 text-sm font-semibold text-gray-500 dark:text-gray-400">
+      <h4 className="mt-2 text-sm font-semibold text-main-text dark:text-dark-main-text">
         Description:
       </h4>
-      <p className="mt-1 text-sm font-normal text-gray-500 dark:text-main-text">
+      <p className="mt-1 text-sm font-normal text-main-text dark:text-dark-main-text">
         {details.description[0]}
       </p>
-      <ul className="list-disc list-inside text-sm text-gray-500 dark:text-main-text">
+      <ul className="list-disc list-inside text-sm text-main-text dark:text-dark-main-text">
         {details.description.slice(1).map((desc, i) => (
           <li key={i}>{desc}</li>
         ))}
       </ul>
-      <h4 className="mt-2 text-sm font-semibold text-gray-500 dark:text-gray-400">
+      <h4 className="mt-2 text-sm font-semibold text-main-text dark:text-dark-main-text">
         Key Achievements:
       </h4>
-      <ul className="mt-1 list-disc list-inside text-sm text-gray-500 dark:text-main-text">
+      <ul className="mt-1 list-disc list-inside text-sm text-main-text dark:text-dark-main-text">
         {details.key_achievements.map((achievement, i) => (
           <li key={i}>{achievement}</li>
         ))}

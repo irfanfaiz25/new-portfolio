@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -15,18 +16,28 @@ export default {
         12: "3rem",
       },
       colors: {
-        background: "#191919",
-        "main-bg": "#272729",
-        "secondary-bg": "#474749",
-        "tertiary-bg": "#f3c623",
+        background: "#cfd2cd",
+        "dark-background": "#191919",
+        "main-bg": "#f2f2f2",
+        "dark-main-bg": "#272729",
+        "secondary-bg": "#dee2e6",
+        "dark-secondary-bg": "#474749",
+        "tertiary-bg": "#4361ee",
+        "dark-tertiary-bg": "#f5cc00",
         "fourtiary-bg": "#f43f5e",
-        "main-border": "#474749",
-        "secondary-border": "#f3c623",
+        "main-border": "#dee2e6",
+        "dark-main-border": "#474749",
+        "secondary-border": "#4361ee",
+        "dark-secondary-border": "#f5cc00",
         "tertiary-border": "#f43f5e",
-        "main-text": "#dcdce4",
-        "secondary-text": "#f3c623",
+        "main-text": "#212529",
+        "dark-main-text": "#dcdce4",
+        "secondary-text": "#4361ee",
+        "dark-secondary-text": "#f5cc00",
         "tertiary-text": "#f43f5e",
-        "main-stroke": "#f3c623",
+        "main-stroke": "#4361ee",
+        "dark-main-stroke": "#f5cc00",
+        // "main-stroke": "#f3c623",
         "secondary-stroke": "#f43f5e",
       },
       keyframes: {

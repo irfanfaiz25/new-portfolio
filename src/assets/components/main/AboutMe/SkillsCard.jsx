@@ -9,7 +9,7 @@ const SkillCard = ({ name, logo, borderColor, delay = 0 }) => {
   return (
     <div
       ref={ref}
-      className={`flex items-center text-center h-32 lg:w-36 bg-secondary-bg p-3 rounded-lg border-t-4 
+      className={`flex items-center text-center h-32 lg:w-36 bg-secondary-bg dark:bg-dark-secondary-bg p-3 rounded-lg border-t-4 
         ${borderColor ? borderColor : `border-gray-400`}
         shadow-md shadow-black transition-opacity duration-1000 ease-in-out
       ${inView ? "opacity-100" : "opacity-0"}`}
@@ -17,7 +17,9 @@ const SkillCard = ({ name, logo, borderColor, delay = 0 }) => {
     >
       <div className="space-y-2 mx-auto">
         <img src={logo} alt={`${name} Logo`} className="w-14 h-14 mx-auto" />
-        <h2 className="text-sm font-semibold">{name}</h2>
+        <h2 className="text-sm text-main-text dark:text-dark-main-text font-semibold">
+          {name}
+        </h2>
       </div>
     </div>
   );

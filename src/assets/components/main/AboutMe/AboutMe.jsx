@@ -30,113 +30,121 @@ const AboutMe = () => {
         <Description />
       </div>
 
-      <h1
-        ref={titleRef}
-        className={`mt-10 mb-10 -ms-2 text-left text-3xl font-bold transition-opacity duration-1000 ease-in-out relative
+      <div className="mx-2">
+        <h1
+          ref={titleRef}
+          className={`mt-10 mb-10 -ms-2 text-left text-3xl font-bold transition-opacity duration-1000 ease-in-out relative
   ${titleInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-      >
-        <span className="text-main-text">Core Skills</span>
-        <div
-          className={`absolute -bottom-2 left-0 w-16 h-1 bg-tertiary-bg transition-transform duration-1000 ease-in-out ${
-            titleInView ? "scale-x-100" : "scale-x-0"
-          }`}
-          style={{ transformOrigin: "left" }}
-        ></div>
-      </h1>
+        >
+          <span className="text-main-text dark:text-dark-main-text">
+            Core Skills
+          </span>
+          <div
+            className={`absolute -bottom-3 left-0 w-16 h-1 bg-tertiary-bg dark:bg-dark-tertiary-bg transition-transform duration-1000 ease-in-out ${
+              titleInView ? "scale-x-100" : "scale-x-0"
+            }`}
+            style={{ transformOrigin: "left" }}
+          ></div>
+        </h1>
 
-      <div className="mt-10 flex flex-wrap justify-center md:justify-between gap-y-8">
-        {Object.entries(SkillsData).map(
-          ([category, { notes, skills }], categoryIndex) => (
-            <div key={category}>
-              <h3 className="text-lg font-bold">{category}</h3>
-              <div className="mt-3 block lg:flex gap-4 space-y-2 lg:space-y-0">
-                {skills.map((skill, skillIndex) => (
-                  <SkillCard
-                    key={skill.name}
-                    name={skill.name}
-                    logo={skill.logo}
-                    borderColor={skill.borderColor && skill.borderColor}
-                    delay={categoryIndex * 200 + skillIndex * 100}
-                  />
-                ))}
-              </div>
-              {notes && (
-                <div className="mt-3 flex space-x-2 items-center">
-                  <div className="bg-fourtiary-bg h-2 w-2 rounded-full shadow-sm shadow-black"></div>
-                  <p className="text-sm font-semibold">Currently Exploring</p>
+        <div className="mt-10 flex flex-wrap justify-center md:justify-between gap-y-8">
+          {Object.entries(SkillsData).map(
+            ([category, { notes, skills }], categoryIndex) => (
+              <div key={category}>
+                <h3 className="text-lg font-bold">{category}</h3>
+                <div className="mt-3 block lg:flex gap-4 space-y-2 lg:space-y-0">
+                  {skills.map((skill, skillIndex) => (
+                    <SkillCard
+                      key={skill.name}
+                      name={skill.name}
+                      logo={skill.logo}
+                      borderColor={skill.borderColor && skill.borderColor}
+                      delay={categoryIndex * 200 + skillIndex * 100}
+                    />
+                  ))}
                 </div>
-              )}
-            </div>
-          )
-        )}
-      </div>
-
-      <div ref={educationRef} className="block lg:flex justify-between px-3">
-        <div>
-          <h1
-            className={`mt-10 mb-10 -ms-2 text-left text-3xl font-bold transition-opacity duration-1000 ease-in-out relative
-  ${educationInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-          >
-            <span className="text-main-text">Education Journey</span>
-            <div
-              className={`absolute -bottom-2 left-0 w-16 h-1 bg-tertiary-bg transition-transform duration-1000 ease-in-out ${
-                educationInView ? "scale-x-100" : "scale-x-0"
-              }`}
-              style={{ transformOrigin: "left" }}
-            ></div>
-          </h1>
-
-          <ol className="relative mt-3 border-s border-gray-200 dark:border-main-border">
-            {EducationData.map((item, index) => (
-              <EducationList
-                key={index}
-                institution={item.institution}
-                note={item.note ? item.note : ""}
-                major={item.major}
-                timeSpan={item.timeSpan}
-                delay={index * 200}
-              />
-            ))}
-          </ol>
+                {notes && (
+                  <div className="mt-3 flex space-x-2 items-center">
+                    <div className="bg-fourtiary-bg h-2 w-2 rounded-full shadow-sm shadow-black"></div>
+                    <p className="text-sm font-semibold">Currently Exploring</p>
+                  </div>
+                )}
+              </div>
+            )
+          )}
         </div>
 
-        <div>
-          <h1
-            className={`mt-10 mb-10 -ms-2 text-left text-3xl font-bold transition-opacity duration-1000 ease-in-out relative
+        <div ref={educationRef} className="block lg:flex justify-between px-3">
+          <div>
+            <h1
+              className={`mt-10 mb-10 -ms-2 text-left text-3xl font-bold transition-opacity duration-1000 ease-in-out relative
   ${educationInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-          >
-            <span className="text-main-text">Certification</span>
-            <div
-              className={`absolute -bottom-2 left-0 w-16 h-1 bg-tertiary-bg transition-transform duration-1000 ease-in-out ${
-                educationInView ? "scale-x-100" : "scale-x-0"
-              }`}
-              style={{ transformOrigin: "left" }}
-            ></div>
-          </h1>
+            >
+              <span className="text-main-text dark:text-dark-main-text">
+                Education Journey
+              </span>
+              <div
+                className={`absolute -bottom-3 left-0 w-16 h-1 bg-tertiary-bg dark:bg-dark-tertiary-bg transition-transform duration-1000 ease-in-out ${
+                  educationInView ? "scale-x-100" : "scale-x-0"
+                }`}
+                style={{ transformOrigin: "left" }}
+              ></div>
+            </h1>
 
-          <ol className="relative mt-3 border-s border-gray-200 dark:border-main-border">
-            {CertificationData.map((item, index) => (
-              <CertificationList
-                key={index}
-                name={item.name}
-                year={item.year}
-                image={item.image}
-                delay={index * 200}
-                selectedImage={(selectedImage) => {
-                  setSelectedImage(selectedImage);
-                  setIsModalOpen(true);
-                }}
-              />
-            ))}
-          </ol>
+            <ol className="relative mt-3 border-s border-main-border dark:border-dark-main-border">
+              {EducationData.map((item, index) => (
+                <EducationList
+                  key={index}
+                  institution={item.institution}
+                  note={item.note ? item.note : ""}
+                  major={item.major}
+                  timeSpan={item.timeSpan}
+                  delay={index * 200}
+                />
+              ))}
+            </ol>
+          </div>
+
+          <div>
+            <h1
+              className={`mt-10 mb-10 -ms-2 text-left text-3xl font-bold transition-opacity duration-1000 ease-in-out relative
+  ${educationInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            >
+              <span className="text-main-text dark:text-dark-main-text">
+                Certification
+              </span>
+              <div
+                className={`absolute -bottom-3 left-0 w-16 h-1 bg-tertiary-bg dark:bg-dark-tertiary-bg transition-transform duration-1000 ease-in-out ${
+                  educationInView ? "scale-x-100" : "scale-x-0"
+                }`}
+                style={{ transformOrigin: "left" }}
+              ></div>
+            </h1>
+
+            <ol className="relative mt-3 border-s border-main-border dark:border-dark-main-border">
+              {CertificationData.map((item, index) => (
+                <CertificationList
+                  key={index}
+                  name={item.name}
+                  year={item.year}
+                  image={item.image}
+                  delay={index * 200}
+                  selectedImage={(selectedImage) => {
+                    setSelectedImage(selectedImage);
+                    setIsModalOpen(true);
+                  }}
+                />
+              ))}
+            </ol>
+          </div>
+
+          <ImageModal
+            isOpen={isModalOpen}
+            imageSrc={selectedImage}
+            alt="certification"
+            onClose={() => setIsModalOpen(false)}
+          />
         </div>
-
-        <ImageModal
-          isOpen={isModalOpen}
-          imageSrc={selectedImage}
-          alt="certification"
-          onClose={() => setIsModalOpen(false)}
-        />
       </div>
     </Index>
   );

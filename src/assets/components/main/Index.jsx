@@ -4,10 +4,12 @@ import NavbarHeader from "./NavbarHeader";
 
 const Index = ({ children }) => {
   return (
-    <div className="h-fit w-full bg-main-bg border-4 border-main-border rounded-xl">
+    <div className="h-fit w-full bg-main-bg dark:bg-dark-main-bg border-4 border-main-border dark:border-dark-main-border rounded-xl">
       <NavbarHeader />
 
-      <div className="p-5 text-main-text">{children}</div>
+      <div className="p-5 text-main-text dark:text-dark-main-text">
+        {children}
+      </div>
     </div>
   );
 };

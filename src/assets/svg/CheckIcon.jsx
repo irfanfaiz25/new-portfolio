@@ -9,7 +9,7 @@ export const CheckIcon = () => {
       id="check-tick"
     >
       <path
-        stroke="#FFFF00"
+        stroke="#fca311"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="12"

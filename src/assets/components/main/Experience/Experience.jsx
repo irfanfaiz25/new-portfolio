@@ -21,7 +21,7 @@ const Experience = () => {
     <Index>
       <div className="mx-3">
         <ol
-          className={`relative mt-3 border-s border-gray-200 dark:border-main-border`}
+          className={`relative mt-3 border-s border-main-border dark:border-dark-main-border`}
         >
           {reversedData.map((item, index) => (
             <ExperienceList
@@ -43,15 +43,17 @@ const Experience = () => {
           className={`mt-10 mb-10 -ms-2 text-left text-3xl font-bold transition-opacity duration-1000 ease-in-out relative
   ${impactInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
         >
-          <span className="text-main-text">Impact Highlights</span>
+          <span className="text-main-text dark:text-dark-main-text">
+            Impact Highlights
+          </span>
           <div
-            className={`absolute -bottom-3 left-0 w-16 h-1 bg-tertiary-bg transition-transform duration-1000 ease-in-out ${
+            className={`absolute -bottom-3 left-0 w-16 h-1 bg-tertiary-bg dark:bg-dark-tertiary-bg transition-transform duration-1000 ease-in-out ${
               impactInView ? "scale-x-100" : "scale-x-0"
             }`}
             style={{ transformOrigin: "left" }}
           ></div>
         </h1>
-        <ul className="space-y-4 text-gray-300">
+        <ul className="space-y-4">
           {ImpactHighlightsData.map((item, index) => (
             <HighlightsList
               key={index}
@@ -69,9 +71,11 @@ const Experience = () => {
           className={`mt-10 mb-10 -ms-2 text-left text-3xl font-bold transition-opacity duration-1000 ease-in-out relative
   ${goalsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
         >
-          <span className="text-main-text">Future Goals</span>
+          <span className="text-main-text dark:text-dark-main-text">
+            Future Goals
+          </span>
           <div
-            className={`absolute -bottom-3 left-0 w-16 h-1 bg-tertiary-bg transition-transform duration-1000 ease-in-out ${
+            className={`absolute -bottom-3 left-0 w-16 h-1 bg-tertiary-bg dark:bg-dark-tertiary-bg transition-transform duration-1000 ease-in-out ${
               goalsInView ? "scale-x-100" : "scale-x-0"
             }`}
             style={{ transformOrigin: "left" }}

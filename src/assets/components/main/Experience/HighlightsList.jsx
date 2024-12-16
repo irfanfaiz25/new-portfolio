@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { CheckIcon } from "../../../svg/CheckIcon";
+import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import { useInView } from "react-intersection-observer";
 
 const HighlightsList = ({ text, highlight, suffix, delay = 0 }) => {
@@ -12,16 +12,18 @@ const HighlightsList = ({ text, highlight, suffix, delay = 0 }) => {
       ref={ref}
       className={`flex items-start space-x-2 transition-opacity duration-1000 ease-in-out
 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+      style={{ transitionDelay: `${delay}ms` }}
     >
       <div
-        className={`flex-shrink-0 w-5 h-5 text-yellow-500 animate-pulse`}
-        style={{ transitionDelay: `${delay}ms` }}
+        className={`flex-shrink-0 pt-1 w-5 h-5 text-secondary-text dark:text-dark-secondary-text animate-pulse`}
       >
-        <CheckIcon />
+        <IoCheckmarkDoneSharp />
       </div>
-      <p>
+      <p className="text-main-text dark:text-dark-main-text">
         {text}
-        <span className="text-white font-semibold">{highlight}</span>
+        <span className="text-secondary-text dark:text-dark-secondary-text/80 font-semibold">
+          {highlight}
+        </span>
         {suffix}
       </p>
     </li>

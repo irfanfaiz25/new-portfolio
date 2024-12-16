@@ -111,13 +111,13 @@ const NavbarHeader = () => {
           <li className="flex items-center py-2 px-3 lg:px-5">
             {!dark && (
               <FaMoon
-                className="text-main-text dark:text-dark-main-text hover:text-secondary-text cursor-pointer transform transition-transform active:rotate-180"
+                className="text-main-text dark:text-dark-main-text hover:text-secondary-text dark:hover:text-dark-secondary-text cursor-pointer transform transition-transform active:rotate-180"
                 onClick={() => darkModeHandler()}
               />
             )}
             {dark && (
               <IoSunny
-                className="text-main-text dark:text-dark-main-text hover:text-secondary-text cursor-pointer transform transition-transform active:rotate-180"
+                className="text-main-text dark:text-dark-main-text hover:text-secondary-text dark:hover:text-dark-secondary-text cursor-pointer transform transition-transform active:rotate-180"
                 onClick={() => darkModeHandler()}
               />
             )}

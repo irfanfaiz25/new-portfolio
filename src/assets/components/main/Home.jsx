@@ -4,9 +4,11 @@ const Home = () => {
   return (
     <Index>
       <div className="justify-center animate-[fadeIn_0.5s_ease-in-out]">
-        <div className="text-left space-y-5 text-2xl md:text-4xl lg:text-5xl font-bold text-main-text dark:text-dark-main-text font-serif leading-9 md:leading-10 lg:leading-12">
+        <div className="text-left space-y-5 text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-main-text dark:text-dark-main-text font-serif leading-9 md:leading-10 lg:leading-12 2xl:leading-[58px]">
           <h1>
-            a passionate software developer striving to{" "}
+            a passionate software developer
+            <br />
+            striving to{" "}
             <span className="relative inline-block">
               learn
               <svg
@@ -43,11 +45,12 @@ const Home = () => {
                   strokeWidth="2"
                 />
               </svg>
-            </span>{" "}
+            </span>
+            <br />
             everyday.
           </h1>
-        </div>
-        <div className="mt-6 text-left text-sm md:text-lg font-light text-main-text dark:text-dark-main-text">
+        </div>{" "}
+        <div className="mt-6 2xl:mt-8 text-left text-sm md:text-lg font-light text-main-text dark:text-dark-main-text">
           My personal hub for{" "}
           <span className="text-secondary-text dark:text-dark-secondary-text font-semibold">
             creativity

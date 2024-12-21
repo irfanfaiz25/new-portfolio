@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router";
 import ProfileSection from "./assets/components/profile/ProfileSection";
 import AboutMe from "./assets/components/main/AboutMe/AboutMe";
 import Home from "./assets/components/main/Home";
-import Projects from "./assets/components/main/Projects";
+import Projects from "./assets/components/main/Projects/Projects";
 import Blog from "./assets/components/main/Blog";
 import Experience from "./assets/components/main/Experience/Experience";
 

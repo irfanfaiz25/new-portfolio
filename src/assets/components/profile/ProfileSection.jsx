@@ -9,7 +9,9 @@ const ProfileSection = () => {
 
   return (
     <>
-      <div className="w-full md:w-[300px] lg:w-[380px] bg-main-bg dark:bg-dark-main-bg border-4 border-main-border dark:border-dark-main-border h-fit rounded-xl p-5 md:p-3 lg:p-7">
+      <div
+        className={`w-full md:sticky md:top-5 lg:top-10 md:w-[300px] lg:w-[380px] bg-main-bg dark:bg-dark-main-bg border-4 border-main-border dark:border-dark-main-border h-fit rounded-xl p-5 md:p-3 lg:p-7`}
+      >
         <div className="flex justify-center items-center p-2 bg-secondary-bg dark:bg-dark-secondary-bg w-36 h-36 rounded-full mx-auto mt-2">
           <img
             src={Profile}

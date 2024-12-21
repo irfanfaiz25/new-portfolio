@@ -29,8 +29,9 @@ const NavbarHeader = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dark, setDark] = useState(() => {
-    // window.matchMedia("(prefers-color-scheme: dark)").matches
-    return localStorage.getItem("theme") === "dark";
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) return savedTheme === "dark";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
 
   const darkModeHandler = () => {
@@ -50,7 +51,7 @@ const NavbarHeader = () => {
   return (
     <div className="flex w-full justify-between ps-5">
       <div className="w-full md:w-auto">
-        <h1 className="text-main-text dark:text-dark-main-text text-lg md:text-xl lg:text-2xl font-bold items-end pt-4 animate-[lineFadeSlide_0.3s_ease-in-out] transition-all duration-300">
+        <h1 className="text-main-text dark:text-dark-main-text text-lg md:text-xl xl:text-2xl font-bold items-end pt-4 animate-[lineFadeSlide_0.3s_ease-in-out] transition-all duration-300">
           {menus.find((menu) => menu.path === window.location.pathname)
             ?.label || "Home"}
         </h1>
@@ -94,7 +95,7 @@ const NavbarHeader = () => {
       transition-all duration-300 ease-in-out lg:static lg:shadow-none lg:w-auto absolute top-10 lg:top-full right-0 z-50 w-48 shadow-lg mt-2 lg:mt-0 `}
         >
           {menus.map((menu, index) => (
-            <li key={index} className="py-2 px-3 lg:px-5">
+            <li key={index} className="py-2 px-3 xl:px-5">
               <Link
                 to={menu.path}
                 className={`${

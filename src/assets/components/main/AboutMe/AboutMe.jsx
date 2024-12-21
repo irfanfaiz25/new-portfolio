@@ -74,8 +74,8 @@ const AboutMe = () => {
           )}
         </div>
 
-        <div ref={educationRef} className="block lg:flex justify-between px-3">
-          <div>
+        <div ref={educationRef} className="block lg:flex w-full px-3">
+          <div className="w-1/2">
             <h1
               className={`mt-10 mb-10 -ms-2 text-left text-3xl font-bold transition-opacity duration-1000 ease-in-out relative
   ${educationInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
@@ -105,7 +105,7 @@ const AboutMe = () => {
             </ol>
           </div>
 
-          <div>
+          <div className="w-1/2">
             <h1
               className={`mt-10 mb-10 -ms-2 text-left text-3xl font-bold transition-opacity duration-1000 ease-in-out relative
   ${educationInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}

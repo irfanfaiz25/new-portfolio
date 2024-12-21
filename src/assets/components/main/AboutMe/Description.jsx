@@ -1,3 +1,5 @@
+import { FaRegFileAlt } from "react-icons/fa";
+
 const Description = () => {
   return (
     <>
@@ -6,8 +8,11 @@ const Description = () => {
         className="rounded-md px-3.5 py-1.5 mb-2 overflow-hidden block md:hidden relative group cursor-pointer border-2 text-sm font-medium border-secondary-border dark:border-dark-secondary-border text-secondary-text dark:text-dark-secondary-text"
       >
         <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-tertiary-bg dark:bg-dark-tertiary-bg/60 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-        <span className="relative text-secondary-text dark:text-dark-secondary-text transition duration-300 group-hover:text-white ease">
-          Download CV
+        <span className="relative flex items-center text-secondary-text dark:text-dark-secondary-text transition duration-300 group-hover:text-white ease">
+          <span className="pe-1">
+            <FaRegFileAlt />
+          </span>
+          <span>Download Resume</span>
         </span>
       </a>
       <div className="flex justify-between items-center">
@@ -20,8 +25,11 @@ const Description = () => {
           className="rounded-md px-3.5 py-1.5 overflow-hidden hidden md:block relative group cursor-pointer border-2 text-sm font-medium border-secondary-border dark:border-dark-secondary-border text-secondary-text dark:text-dark-secondary-text"
         >
           <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-tertiary-bg dark:bg-dark-tertiary-bg/60 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-          <span className="relative text-secondary-text dark:text-dark-secondary-text transition duration-300 group-hover:text-white ease">
-            Download CV
+          <span className="relative flex items-center text-secondary-text dark:text-dark-secondary-text transition duration-300 group-hover:text-white ease">
+            <span className="pe-1">
+              <FaRegFileAlt />
+            </span>
+            <span>Download Resume</span>
           </span>
         </a>
       </div>

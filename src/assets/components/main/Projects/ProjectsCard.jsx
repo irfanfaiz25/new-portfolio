@@ -25,7 +25,7 @@ const ProjectsCard = ({
       <div className="overflow-hidden rounded-lg">
         <img
           src={images[0]}
-          alt="edc-sample-monitoring"
+          alt={`${name} image`}
           className="w-full h-52 object-cover hover:scale-110 transition-transform duration-700 cursor-pointer"
           onClick={() => openModal(images, description)}
         />

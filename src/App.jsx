@@ -4,7 +4,7 @@ import ProfileSection from "./assets/components/profile/ProfileSection";
 import AboutMe from "./assets/components/main/AboutMe/AboutMe";
 import Home from "./assets/components/main/Home";
 import Projects from "./assets/components/main/Projects/Projects";
-import Blog from "./assets/components/main/Blog/Blog";
+import Contact from "./assets/components/main/Contact/Contact";
 import Experience from "./assets/components/main/Experience/Experience";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
           <Route path="/about-me" element={<AboutMe />}></Route>
           <Route path="/experiences" element={<Experience />}></Route>
           <Route path="/projects" element={<Projects />}></Route>
-          <Route path="/blog" element={<Blog />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
         </Routes>
       </section>
     </>

@@ -22,8 +22,8 @@ const NavbarHeader = () => {
       path: "/projects",
     },
     {
-      label: "Blog",
-      path: "/blog",
+      label: "Contact",
+      path: "/contact",
     },
   ];
 

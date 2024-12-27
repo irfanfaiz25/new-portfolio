@@ -19,7 +19,9 @@ const ProjectsCard = ({
   return (
     <div
       className={`w-full p-3 bg-secondary-bg dark:bg-dark-secondary-bg rounded-xl shadow-md hover:shadow-lg transition-all duration-500 transform hover:-translate-y-1 group relative ${
-        isExpanded ? "h-auto" : "h-[470px] lg:h-[440px] xl:h-[420px]"
+        isExpanded
+          ? "h-auto"
+          : "h-[470px] md:h-[400px] lg:h-[440px] xl:h-[420px]"
       }`}
     >
       <div className="overflow-hidden rounded-lg">

@@ -30,7 +30,7 @@ const Form = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/contact",
+        "https://portfolio-api.irfanfaiz.my.id/api/contact",
         formData
       );
       setResponseMessage(response.data.message);

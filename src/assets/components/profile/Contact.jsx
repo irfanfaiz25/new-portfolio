@@ -61,7 +61,7 @@ const Contact = () => {
       icon: <InstagramIcon width={25} height={25} color={color} />,
       name: "Instagram",
       content: "irv.faizz",
-      link: "https://www.upwork.com/freelancers/~0160f11004b06a39d7",
+      link: "https://www.instagram.com/irv.faizz",
     },
   ];
 
@@ -79,12 +79,19 @@ const Contact = () => {
             <p className="text-xs text-main-text dark:text-dark-main-text">
               {contact.name}
             </p>
-            <Link
-              to={contact.link}
-              className="flex space-x-1 items-center text-xs font-semibold text-main-text dark:text-dark-main-text hover:text-secondary-text dark:hover:text-dark-secondary-text hover:underline transition-all duration-300 break-all"
-            >
-              {contact.content}
-            </Link>
+            {contact.link ? (
+              <Link
+                target="_blank"
+                to={contact.link}
+                className="flex space-x-1 items-center text-xs font-semibold text-main-text dark:text-dark-main-text hover:text-secondary-text dark:hover:text-dark-secondary-text hover:underline transition-all duration-300 break-all"
+              >
+                {contact.content}
+              </Link>
+            ) : (
+              <p className="text-xs font-semibold text-main-text dark:text-dark-main-text">
+                {contact.content}
+              </p>
+            )}
           </div>
         </div>
       ))}

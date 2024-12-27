@@ -15,12 +15,12 @@ export const ImageModal = ({ isOpen, onClose, imageSrc, alt }) => {
 
       {/* Modal Content */}
       <div
-        className="relative z-[9999] animate-[scaleIn_0.4s_cubic-bezier(0.16,1,0.3,1)]"
+        className="relative z-[9999] mx-auto animate-[scaleIn_0.4s_cubic-bezier(0.16,1,0.3,1)]"
         onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
       >
         {/* Close Button */}
         <button
-          className="absolute -top-10 right-0 text-white text-xl
+          className="absolute top-2 right-2 bg-black/40 px-2.5 py-0.5 rounded-full text-white text-lg
                      transition-all duration-200 hover:rotate-90"
           onClick={onClose}
         >
@@ -31,9 +31,9 @@ export const ImageModal = ({ isOpen, onClose, imageSrc, alt }) => {
         <img
           src={imageSrc}
           alt={alt}
-          className="max-w-[90%] max-h-[90vh] rounded-2xl shadow-2xl
+          className="max-w-[90vw] max-h-[90vh] rounded-2xl shadow-2xl
                      hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]
-                     transition-shadow duration-300"
+                     transition-shadow duration-300 object-contain"
         />
       </div>
     </div>,

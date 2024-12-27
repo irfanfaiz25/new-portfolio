@@ -59,7 +59,7 @@ const NavbarHeader = () => {
       </div>
       <nav className="w-full block md:w-auto relative">
         {/* Hamburger Button */}
-        <button
+        {/* <button
           className="lg:hidden p-2 dark:text-dark-main-text hover:text-secondary-text dark:hover:text-dark-secondary-text float-right"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
@@ -85,7 +85,7 @@ const NavbarHeader = () => {
               />
             )}
           </svg>
-        </button>
+        </button> */}
 
         {/* Menu Items */}
         <ul

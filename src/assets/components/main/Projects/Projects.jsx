@@ -128,7 +128,7 @@ const Projects = () => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Image Modal"
+        contentLabel="Image Modal" 
         appElement={document.getElementById("root")}
       >
         <div className="relative">
@@ -138,18 +138,22 @@ const Projects = () => {
           >
             <IoClose size={24} />
           </button>
-          <button
-            onClick={prevImage}
-            className="absolute left-1 md:left-4 top-1/3 md:top-1/2 -translate-y-1/2 text-white bg-black/50 p-0.5 md:p-2 rounded-full hover:bg-black/70 transition-all z-10"
-          >
-            <IoIosArrowBack size={24} />
-          </button>
-          <button
-            onClick={nextImage}
-            className="absolute right-1 md:right-4 top-1/3 md:top-1/2 -translate-y-1/2 text-white bg-black/50 p-0.5 md:p-2 rounded-full hover:bg-black/70 transition-all z-10"
-          >
-            <IoIosArrowForward size={24} />
-          </button>
+          {selectedImages.length > 1 && (
+            <>
+              <button
+                onClick={prevImage}
+                className="absolute left-1 md:left-4 top-1/3 md:top-1/2 -translate-y-1/2 text-white bg-black/50 p-0.5 md:p-2 rounded-full hover:bg-black/70 transition-all z-10"
+              >
+                <IoIosArrowBack size={24} />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-1 md:right-4 top-1/3 md:top-1/2 -translate-y-1/2 text-white bg-black/50 p-0.5 md:p-2 rounded-full hover:bg-black/70 transition-all z-10"
+              >
+                <IoIosArrowForward size={24} />
+              </button>
+            </>
+          )}
           <img
             src={selectedImages[currentImageIndex]}
             alt="Project Preview"

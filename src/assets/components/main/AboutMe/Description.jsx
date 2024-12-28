@@ -1,10 +1,13 @@
 import { FaRegFileAlt } from "react-icons/fa";
+import CV from "../../../pdf/CV-ATS-IMAGE.pdf";
 
 const Description = () => {
   return (
     <>
       <a
-        href="#_"
+        href={CV}
+        target="_blank"
+        download="Ahmad-Irfan-Faiz-CV.pdf"
         className="rounded-md px-3.5 py-1.5 mb-2 overflow-hidden block md:hidden relative group cursor-pointer border-2 text-sm font-medium border-secondary-border dark:border-dark-secondary-border text-secondary-text dark:text-dark-secondary-text"
       >
         <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-tertiary-bg dark:bg-dark-tertiary-bg/60 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
@@ -21,7 +24,8 @@ const Description = () => {
           <span className="absolute bottom-1 left-[69px] w-44 h-5 bg-rose-500/70 transform -rotate-1 -z-0 animate-[highlight_1s_ease-in-out]"></span>
         </p>
         <a
-          href="#_"
+          href={CV}
+          target="_blank"
           className="rounded-md px-3.5 py-1.5 overflow-hidden hidden md:block relative group cursor-pointer border-2 text-sm font-medium border-secondary-border dark:border-dark-secondary-border text-secondary-text dark:text-dark-secondary-text"
         >
           <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-tertiary-bg dark:bg-dark-tertiary-bg/60 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>

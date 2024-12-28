@@ -36,7 +36,7 @@ export const ExperienceData = [
       "PT. Astra Otoparts, Tbk - Divisi Engineering Development Center",
     as: "Fullstack Web Developer Intern",
     position: "Internship",
-    timeSpan: "July, 2023 - November, 2024",
+    timeSpan: "July, 2023 - November, 2023",
     description: [
       "Led the digital transformation by developing three web-based systems tailored to streamline internal processes:",
       "EDC Security Checking Point System: Built with Laravel 10, MySQL, Bootstrap, and Livewire to enhance security checks efficiency.",
@@ -67,7 +67,7 @@ export const ExperienceData = [
     companyName: "PT. Tiga Serangkai Pustaka Mandiri Group - TPP Al Firdaus",
     as: "Backend Web Developer Intern",
     position: "Internship",
-    timeSpan: "February, 2023 - June, 2023",
+    timeSpan: "February, 2024 - June, 2024",
     description: [
       "Learned the fundamentals of Golang for several weeks, preparing for hands-on development of backend services.",
       "Collaborated with mentors to build a web-based Academic Information System for TPP Al Firdaus using Golang and PostgreSQL.",

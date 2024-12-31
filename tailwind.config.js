@@ -31,7 +31,7 @@ export default {
         "dark-secondary-border": "#f5cc00",
         "tertiary-border": "#f43f5e",
         "main-text": "#212529",
-        "dark-main-text": "#dcdce4",
+        "dark-main-text": "#f9fafb",
         "secondary-text": "#4361ee",
         "dark-secondary-text": "#f5cc00",
         "tertiary-text": "#f43f5e",

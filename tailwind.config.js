@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import scrollbar from "tailwind-scrollbar";
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
@@ -37,7 +39,6 @@ export default {
         "tertiary-text": "#f43f5e",
         "main-stroke": "#4361ee",
         "dark-main-stroke": "#f5cc00",
-        // "main-stroke": "#f3c623",
         "secondary-stroke": "#f43f5e",
       },
       keyframes: {
@@ -90,5 +91,5 @@ export default {
     },
   },
   // eslint-disable-next-line no-undef
-  plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
+  plugins: [scrollbar({ nocompatible: true })],
 };

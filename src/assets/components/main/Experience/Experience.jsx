@@ -4,7 +4,7 @@ import ExperienceList from "./ExperienceList";
 import { ExperienceData } from "../../../data/experiences";
 import HighlightsList from "./HighlightsList";
 import { ImpactHighlightsData } from "../../../data/ImpactHighlights";
-import { FutureGoalsData } from "../../../data/futureGoals";
+import { FutureGoalsData } from "../../../data/FutureGoals";
 import GoalsList from "./GoalsList";
 
 const Experience = () => {

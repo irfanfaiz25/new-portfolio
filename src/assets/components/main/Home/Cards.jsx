@@ -73,12 +73,12 @@ export default function ModernImageSlider() {
           >
             <div className="relative h-[350px] rounded-2xl overflow-hidden group/image">
               {/* Overlay Text */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10">
                 <div className="absolute bottom-0 left-0 p-8 pb-10 w-full">
-                  <h2 className="text-3xl font-bold text-white mb-1">
+                  <h2 className="text-xl md:text-3xl font-bold text-white mb-1">
                     {filteredProjects[currentIndex].name}
                   </h2>
-                  <p className="text-gray-200 max-w-2xl">
+                  <p className="text-gray-200 max-w-2xl text-sm md:text-base">
                     {filteredProjects[currentIndex].short_description}
                   </p>
                 </div>
@@ -106,7 +106,7 @@ export default function ModernImageSlider() {
       {/* Navigation Buttons */}
       <button
         onClick={() => paginate(-1)}
-        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full 
+        className="absolute left-4 top-[185px] md:top-1/2 -translate-y-1/2 p-3 rounded-full 
                  bg-black/20 dark:bg-white/20 backdrop-blur-sm hover:bg-black/40 dark:hover:bg-white/40 
                  transition-all duration-300 z-20"
       >
@@ -114,7 +114,7 @@ export default function ModernImageSlider() {
       </button>
       <button
         onClick={() => paginate(1)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full 
+        className="absolute right-4 top-[185px] md:top-1/2 -translate-y-1/2 p-3 rounded-full 
                  bg-black/20 dark:bg-white/20 backdrop-blur-sm hover:bg-black/40 dark:hover:bg-white/40 
                  transition-all duration-300 z-20"
       >

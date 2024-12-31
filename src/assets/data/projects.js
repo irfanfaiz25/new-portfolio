@@ -4,11 +4,14 @@ const getImageUrl = (name) =>
 const edcSampleImages = [...Array(4)].map((_, i) =>
   getImageUrl(`edc-sample${i + 1}`)
 );
-const edcSecurityImages = [...Array(3)].map((_, i) =>
+const edcSecurityImages = [...Array(1)].map((_, i) =>
   getImageUrl(`edc-security${i + 1}`)
 );
-const edcAssetImages = [...Array(3)].map((_, i) =>
+const edcAssetImages = [...Array(1)].map((_, i) =>
   getImageUrl(`edc-asset${i + 1}`)
+);
+const portfolioImage = [...Array(1)].map((_, i) =>
+  getImageUrl(`portfolio${i + 1}`)
 );
 const rentalImages = [...Array(8)].map((_, i) => getImageUrl(`rental${i + 1}`));
 const mebelImages = [...Array(4)].map((_, i) => getImageUrl(`mebel${i + 1}`));
@@ -23,15 +26,6 @@ const relasiImages = [...Array(8)].map((_, i) => getImageUrl(`relasi${i + 1}`));
 
 export const ProjectsData = [
   {
-    name: "Sample Monitoring System for EDC",
-    description: `A project developed for PT Astra Otoparts' digitalization initiative that streamlines sample recording and monitoring by implementing an interactive system for easy navigation, generating detailed product labels with barcodes, and enabling efficient tracking through barcode scanning at each stage of the sample's journey, ensuring accurate and seamless data management.`,
-    short_description:
-      "Interactive system for streamlined sample recording and monitoring with barcode tracking.",
-    techStack: ["PHP", "Bootstrap", "MySQL"],
-    images: edcSampleImages,
-    url: "",
-  },
-  {
     name: "Security Checking System for EDC",
     description: `This system, developed for PT Astra Otoparts' digitalization initiative, enhances security patrol efficiency by enabling personnel to scan barcodes at designated checkpoints using a device and scanner, automatically updating location status in real-time and streamlining both data recording and reporting processes for improved monitoring and management.`,
     short_description:
@@ -41,6 +35,15 @@ export const ProjectsData = [
     url: "",
   },
   {
+    name: "Portfolio Website",
+    description: `A personal portfolio website built with React, TailwindCSS to showcase my skills, experiences, and projects. The site is designed with a clean and modern interface, emphasizing responsiveness and accessibility. It features dynamic content management through Laravel's backend API and MySQL database integration. It includes sections for "About Me," "Experiences," "Projects," and more, tailored to present my professional journey effectively.`,
+    short_description:
+      "Modern, responsive portfolio website showcasing professional skills and accomplishments.",
+    techStack: ["Java Script", "ReactJS", "Tailwind"],
+    images: portfolioImage,
+    url: "https://irfanfaiz.my.id",
+  },
+  {
     name: "PlayStation Rental Management System",
     description: `A comprehensive system designed to streamline the management of PlayStation rentals. It includes features for tracking console availability, managing rental durations, calculating total income, and handling customer orders for food and drinks. The system enhances operational efficiency and provides an intuitive interface for seamless management of rental activities.`,
     short_description:
@@ -48,6 +51,15 @@ export const ProjectsData = [
     techStack: ["PHP", "Laravel", "Livewire", "Tailwind", "MySQL"],
     images: rentalImages,
     url: "https://github.com/irfanfaiz25/rental-management-v3",
+  },
+  {
+    name: "Sample Monitoring System for EDC",
+    description: `A project developed for PT Astra Otoparts' digitalization initiative that streamlines sample recording and monitoring by implementing an interactive system for easy navigation, generating detailed product labels with barcodes, and enabling efficient tracking through barcode scanning at each stage of the sample's journey, ensuring accurate and seamless data management.`,
+    short_description:
+      "Interactive system for streamlined sample recording and monitoring with barcode tracking.",
+    techStack: ["PHP", "Bootstrap", "MySQL"],
+    images: edcSampleImages,
+    url: "",
   },
   {
     name: "Asset Management System for EDC",

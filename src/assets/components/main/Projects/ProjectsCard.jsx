@@ -64,6 +64,11 @@ const ProjectsCard = ({
             </button>
           )}
         </p>
+        {name == "Portfolio Website" && (
+          <p className="text-sm text-secondary-text dark:text-dark-secondary-text italic font-medium leading-relaxed">
+            {`"You're currently browsing this project!"`}
+          </p>
+        )}
       </div>
 
       <div className="mt-2 flex space-x-1 fixed bottom-4">

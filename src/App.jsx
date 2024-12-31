@@ -18,7 +18,7 @@ function App() {
     window.scrollTo(0, 0);
   }, [location]);
 
-  const [showProfile, setShowProfile] = useState(true);
+  const [showProfile, setShowProfile] = useState(false);
   const toggleProfileSection = () => {
     setShowProfile((prev) => !prev);
   };
@@ -122,7 +122,7 @@ function App() {
         />
         {isMenuOpen && (
           <ul
-            className="fixed text-center left-4 right-4 p-2 top-16 h-fit backdrop-blur-sm bg-secondary-bg/70 dark:bg-dark-secondary-bg/70 z-50 font-semibold rounded-md transition-all ease-in-out duration-500"
+            className="fixed text-center left-4 right-4 p-2 top-16 h-fit backdrop-blur-sm bg-secondary-bg/80 dark:bg-dark-secondary-bg/80 z-50 font-semibold rounded-md transition-all ease-in-out duration-500"
             onClick={(e) => e.stopPropagation()}
           >
             {menus.map((item, index) => (

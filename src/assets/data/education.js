@@ -1,7 +1,7 @@
 export const EducationData = [
   {
     institution: "SMK Telekomunikasi Tunas Harapan",
-    major: "Rekayasa Perangkat Lunak",
+    major: "Software Engineering",
     timeSpan: "2015 - 2018",
   },
   {

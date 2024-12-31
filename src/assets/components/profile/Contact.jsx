@@ -49,7 +49,7 @@ const Contact = () => {
       icon: <LinkedinIcon width={25} height={25} color={color} />,
       name: "Linkedin",
       content: "ahmad irfan faiz",
-      link: "https://www.linkedin.com/in/ahmad-irfan-faiz-0a4889137/",
+      link: "https://www.linkedin.com/in/ahmad-irfan-faiz",
     },
     {
       icon: <UpworkIcon width={25} height={25} color={color} />,

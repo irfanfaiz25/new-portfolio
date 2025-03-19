@@ -7,5 +7,12 @@ export default defineConfig({
   server: {
     host: true,
     port: 5173,
+    // proxy: {
+    //   "/api": {
+    //     target: "https://lppm.sinus.ac.id",
+    //     changeOrigin: true,
+    //     secure: false,
+    //   },
+    // },
   },
 });

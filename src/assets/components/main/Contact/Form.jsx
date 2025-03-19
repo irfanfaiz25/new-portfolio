@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosSend } from "react-icons/io";
 import { FiMail, FiUser } from "react-icons/fi";
 import axios from "axios";
 
 const Form = () => {
+  // const initialFormData = {
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // };
   const initialFormData = {
-    name: "",
     email: "",
-    message: "",
+    password: "",
   };
 
   const [formData, setFormData] = useState(initialFormData);
@@ -15,6 +19,23 @@ const Form = () => {
   const [responseMessage, setResponseMessage] = useState("");
   const [errorResponse, setErrorResponse] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        "/api/pages/menu"
+      );
+      console.log(response)
+      setResponseMessage(response.data.message);
+    } catch (err) {
+      console.error("Error: ", err);
+      setErrorResponse(err.response.data.errors);
+    }
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,9 +51,10 @@ const Form = () => {
 
     try {
       const response = await axios.post(
-        "https://portfolio-api.irfanfaiz.my.id/api/contact",
+        "/api/users/login",
         formData
       );
+      console.log(response)
       setResponseMessage(response.data.message);
     } catch (err) {
       console.error("Error: ", err);
@@ -49,31 +71,12 @@ const Form = () => {
           <div className="relative">
             <FiUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full pl-12 pr-4 py-3 rounded-lg bg-background/50 dark:bg-dark-background/50 border-2 border-main-border dark:border-dark-main-border text-main-text dark:text-dark-main-text focus:outline-none focus:border-secondary-border dark:focus:border-dark-secondary-border focus:ring-2 focus:ring-secondary-border/20 transition-all duration-300"
-              placeholder="Your Name"
-            />
-          </div>
-          {errorResponse.name && (
-            <p className="mt-1 text-sm text-red-400 font-medium">
-              {errorResponse.name[0]}
-            </p>
-          )}
-        </div>
-
-        <div>
-          <div className="relative">
-            <FiMail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
-            <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               className="w-full pl-12 pr-4 py-3 rounded-lg bg-background/50 dark:bg-dark-background/50 border-2 border-main-border dark:border-dark-main-border text-main-text dark:text-dark-main-text focus:outline-none focus:border-secondary-border dark:focus:border-dark-secondary-border focus:ring-2 focus:ring-secondary-border/20 transition-all duration-300"
-              placeholder="Your Email"
+              placeholder="Your email"
             />
           </div>
           {errorResponse.email && (
@@ -84,6 +87,25 @@ const Form = () => {
         </div>
 
         <div>
+          <div className="relative">
+            <FiMail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className="w-full pl-12 pr-4 py-3 rounded-lg bg-background/50 dark:bg-dark-background/50 border-2 border-main-border dark:border-dark-main-border text-main-text dark:text-dark-main-text focus:outline-none focus:border-secondary-border dark:focus:border-dark-secondary-border focus:ring-2 focus:ring-secondary-border/20 transition-all duration-300"
+              placeholder="Your password"
+            />
+          </div>
+          {errorResponse.password && (
+            <p className="mt-1 text-sm text-red-400 font-medium">
+              {errorResponse.password[0]}
+            </p>
+          )}
+        </div>
+
+        {/* <div>
           <textarea
             name="message"
             value={formData.message}
@@ -97,7 +119,7 @@ const Form = () => {
               {errorResponse.message[0]}
             </p>
           )}
-        </div>
+        </div> */}
 
         {responseMessage && (
           <div

@@ -49,21 +49,6 @@ export const ExperienceData = [
     ],
   },
   {
-    companyName: "Freelance Web Developer",
-    as: "Freelance Web Developer",
-    position: "Freelancer",
-    timeSpan: "November, 2023 - Present",
-    description: [
-      "Developed a variety of websites, primarily focused on data entry platforms and questionnaire websites using Laravel, MySQL, Livewire, and TailwindCSS.",
-      "Occasionally worked on smaller projects with React.js to enhance my skills and gain hands-on experience while learning the framework.",
-    ],
-    key_achievements: [
-      "Successfully delivered multiple websites for clients, helping them manage data and streamline their processes.",
-      "Built interactive and responsive web applications, improving user experience and functionality.",
-      "Continually expanding knowledge of React.js through practical, real-world projects.",
-    ],
-  },
-  {
     companyName: "PT. Tiga Serangkai Pustaka Mandiri Group - TPP Al Firdaus",
     as: "Backend Web Developer Intern",
     position: "Internship",
@@ -83,10 +68,10 @@ export const ExperienceData = [
     ],
   },
   {
-    companyName: "STMIK Sinar Nusantara Surakarta - LPPM Section",
+    companyName: "Tiga Serangkai University - LPPM Section",
     as: "Backend Web Developer Intern",
     position: "Internship",
-    timeSpan: "August, 2024 - Present",
+    timeSpan: "August, 2024 - February, 2025",
     description: [
       "Built a REST API for the LPPM Web Information System using Laravel 11 and MySQL, providing robust backend support for the project.",
       "Appointed as the project leader, managing tasks, timelines, and team collaboration while ensuring project goals were met efficiently.",
@@ -98,6 +83,21 @@ export const ExperienceData = [
       "Demonstrated leadership capabilities as a project leader, effectively managing and supporting the team.",
       "Enhanced collaboration between backend and frontend development by providing timely support and clear API documentation.",
       "Strengthened skills in full-stack development by contributing to both backend and frontend tasks.",
+    ],
+  },
+  {
+    companyName: "Freelance Web Developer",
+    as: "Freelance Web Developer",
+    position: "Freelancer",
+    timeSpan: "November, 2023 - Present",
+    description: [
+      "Developed a variety of websites, primarily focused on data entry platforms and questionnaire websites using Laravel, MySQL, Livewire, and TailwindCSS.",
+      "Occasionally worked on smaller projects with React.js to enhance my skills and gain hands-on experience while learning the framework.",
+    ],
+    key_achievements: [
+      "Successfully delivered multiple websites for clients, helping them manage data and streamline their processes.",
+      "Built interactive and responsive web applications, improving user experience and functionality.",
+      "Continually expanding knowledge of React.js through practical, real-world projects.",
     ],
   },
 ];

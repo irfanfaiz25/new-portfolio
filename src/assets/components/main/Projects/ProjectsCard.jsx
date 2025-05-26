@@ -13,8 +13,8 @@ const ProjectsCard = ({
   isExpanded,
   onToggleExpand,
 }) => {
-  const truncatedDescription = description.slice(0, 210);
-  const needsTruncation = description.length > 210;
+  const truncatedDescription = description.slice(0, 130);
+  const needsTruncation = description.length > 130;
 
   return (
     <div

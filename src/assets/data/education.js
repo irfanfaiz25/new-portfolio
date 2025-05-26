@@ -11,7 +11,7 @@ export const EducationData = [
     note: "(Incomplete)",
   },
   {
-    institution: "STMIK Sinar Nusantara Surakarta",
+    institution: "Tiga Serangkai University Surakarta",
     major: "Bachelor of Informatics",
     timeSpan: "2021 - Present",
   },

@@ -23,8 +23,28 @@ const questionnaireImages = [...Array(3)].map((_, i) =>
 );
 const esTehImages = [...Array(9)].map((_, i) => getImageUrl(`esteh${i + 1}`));
 const relasiImages = [...Array(8)].map((_, i) => getImageUrl(`relasi${i + 1}`));
+const lppmImages = [...Array(4)].map((_, i) => getImageUrl(`lppm${i + 1}`));
+const dnnImages = [...Array(4)].map((_, i) => getImageUrl(`dnn${i + 1}`));
 
 export const ProjectsData = [
+  {
+    name: "DNN Company Profile",
+    description: `A dynamic company profile website developed for Dwipa Nusantara Niaga (DNN), a cigarette manufacturing company. The platform serves as a comprehensive information hub showcasing the company's profile, products, and business activities. The website features detailed sections about the company's cigarette products, corporate information, and latest news. It is equipped with a robust admin panel for content management, allowing staff to easily update product information, company news, and maintain dynamic content across the website.`,
+    short_description:
+      "Dynamic company profile website for cigarette manufacturer featuring product showcase and content management system.",
+    techStack: ["Java Script", "ReactJS", "Laravel", "Livewire", "Tailwind"],
+    images: dnnImages,
+    url: "https://dwipanusantaraniaga.id",
+  },
+  {
+    name: "LPPM Web Information System",
+    description: `A dynamic website developed for Tiga Serangkai University's Institute of Research and Community Service (LPPM) that serves as a comprehensive information hub. The platform showcases university research activities, academic journals, and institutional events. Features include detailed sections for LPPM programs, publication archives, and university news. The system is equipped with a robust admin panel for content management, allowing staff to easily update information, manage journal publications, and maintain dynamic content across the website.`,
+    short_description:
+      "Dynamic web platform for university research institute featuring academic publications and institutional activities with content management system.",
+    techStack: ["Java Script", "ReactJS", "Laravel", "Tailwind", "MySQL"],
+    images: lppmImages,
+    url: "https://lppm.sinus.ac.id",
+  },
   {
     name: "Security Checking System for EDC",
     description: `This system, developed for PT Astra Otoparts' digitalization initiative, enhances security patrol efficiency by enabling personnel to scan barcodes at designated checkpoints using a device and scanner, automatically updating location status in real-time and streamlining both data recording and reporting processes for improved monitoring and management.`,

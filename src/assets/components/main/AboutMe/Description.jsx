@@ -1,5 +1,5 @@
 import { FaRegFileAlt } from "react-icons/fa";
-import CV from "../../../pdf/NEW-CV-ATS-IMAGE.pdf";
+import CV from "../../../pdf/CV-AHMAD IRFAN FAIZ.pdf";
 
 const Description = () => {
   return (

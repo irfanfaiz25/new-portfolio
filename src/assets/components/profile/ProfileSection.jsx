@@ -53,7 +53,7 @@ const ProfileSection = ({ toggleProfileSection }) => {
           </div>
           <div className="border-2 border-secondary-border dark:border-dark-secondary-border py-1.5 px-1.5 w-2/3 flex justify-center mx-auto rounded-md hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-md">
             <p className="text-secondary-text dark:text-dark-secondary-text text-xs lg:text-sm">
-              Backend Specialist
+              IT Enthusiast
             </p>
           </div>
         </div>

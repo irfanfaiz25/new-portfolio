@@ -4,38 +4,13 @@ import { FiMail, FiUser } from "react-icons/fi";
 import axios from "axios";
 
 const Form = () => {
-  // const initialFormData = {
-  //   name: "",
-  //   email: "",
-  //   message: "",
-  // };
   const initialFormData = {
-    email: "",
-    password: "",
+    name: "",
+    message: "",
   };
 
   const [formData, setFormData] = useState(initialFormData);
-
-  const [responseMessage, setResponseMessage] = useState("");
-  const [errorResponse, setErrorResponse] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        "/api/pages/menu"
-      );
-      console.log(response)
-      setResponseMessage(response.data.message);
-    } catch (err) {
-      console.error("Error: ", err);
-      setErrorResponse(err.response.data.errors);
-    }
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,25 +20,24 @@ const Form = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    try {
-      const response = await axios.post(
-        "/api/users/login",
-        formData
-      );
-      console.log(response)
-      setResponseMessage(response.data.message);
-    } catch (err) {
-      console.error("Error: ", err);
-      setErrorResponse(err.response.data.errors);
-    } finally {
-      setIsLoading(false);
-      setFormData(initialFormData);
-    }
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Contact from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:ahmadirfanfaiz13@gmail.com?subject=${subject}&body=${body}`;
+
+    // Open email client
+    window.location.href = mailtoLink;
+
+    setIsLoading(false);
+    setFormData(initialFormData);
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="space-y-6">
@@ -71,76 +45,31 @@ const Form = () => {
           <div className="relative">
             <FiUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
-              type="email"
-              name="email"
-              value={formData.email}
+              type="text"
+              name="name"
+              value={formData.name}
               onChange={handleChange}
+              required
               className="w-full pl-12 pr-4 py-3 rounded-lg bg-background/50 dark:bg-dark-background/50 border-2 border-main-border dark:border-dark-main-border text-main-text dark:text-dark-main-text focus:outline-none focus:border-secondary-border dark:focus:border-dark-secondary-border focus:ring-2 focus:ring-secondary-border/20 transition-all duration-300"
-              placeholder="Your email"
+              placeholder="Your Name"
             />
           </div>
-          {errorResponse.email && (
-            <p className="mt-1 text-sm text-red-400 font-medium">
-              {errorResponse.email[0]}
-            </p>
-          )}
         </div>
 
         <div>
           <div className="relative">
-            <FiMail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
+            <FiMail className="absolute left-4 top-4 text-gray-400" />
+            <textarea
+              name="message"
+              value={formData.message}
               onChange={handleChange}
+              rows={5}
+              required
               className="w-full pl-12 pr-4 py-3 rounded-lg bg-background/50 dark:bg-dark-background/50 border-2 border-main-border dark:border-dark-main-border text-main-text dark:text-dark-main-text focus:outline-none focus:border-secondary-border dark:focus:border-dark-secondary-border focus:ring-2 focus:ring-secondary-border/20 transition-all duration-300"
-              placeholder="Your password"
+              placeholder="Your Message..."
             />
           </div>
-          {errorResponse.password && (
-            <p className="mt-1 text-sm text-red-400 font-medium">
-              {errorResponse.password[0]}
-            </p>
-          )}
         </div>
-
-        {/* <div>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows={5}
-            className="w-full px-4 py-3 rounded-lg bg-background/50 dark:bg-dark-background/50 border-2 border-main-border dark:border-dark-main-border text-main-text dark:text-dark-main-text focus:outline-none focus:border-secondary-border dark:focus:border-dark-secondary-border focus:ring-2 focus:ring-secondary-border/20 transition-all duration-300"
-            placeholder="Your Message..."
-          />
-          {errorResponse.message && (
-            <p className="text-sm text-red-400 font-medium">
-              {errorResponse.message[0]}
-            </p>
-          )}
-        </div> */}
-
-        {responseMessage && (
-          <div
-            className="flex items-center p-4 my-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
-            role="alert"
-          >
-            <svg
-              className="flex-shrink-0 inline w-4 h-4 me-3"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-            </svg>
-            <span className="sr-only">Info</span>
-            <div>
-              <span className="font-medium">Sent!</span> {responseMessage}
-            </div>
-          </div>
-        )}
 
         <button
           type="submit"
@@ -151,7 +80,7 @@ const Form = () => {
             className="group-hover:translate-x-1 transition-transform duration-300"
             size={20}
           />
-          <span>{isLoading ? "Sending..." : "Send Message"}</span>
+          <span>{isLoading ? "Opening Email..." : "Send Message"}</span>
         </button>
       </div>
     </form>
